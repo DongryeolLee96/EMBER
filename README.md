@@ -1,14 +1,12 @@
-# EMBER
-
-# AskCQ README
+# EMBER README
 
 This is the repository documenting the paper
-[Asking Clarification Questions to Handle Ambiguity in Open-Domain QA]([https://arxiv.org/abs/2305.13808](https://aclanthology.org/2023.findings-emnlp.772/)) (EMNLP 2023-Findings)
-by Dongryeol Lee<sup>* </sup>, Segwang Kim<sup> *</sup>, Minwoo Lee, Joonsuk Park, Sang-Woo Lee, and Kyomin Jung.
+[Are LLM-Judges Robust to Expressions of Uncertainty? Investigating the effect of Epistemic Markers on LLM-based Evaluation]([https://arxiv.org/abs/2410.20774] (NAACL 2025-Main (**Oral**))
+by Dongryeol Lee<sup>* </sup>, Yerin Hwang<sup> *</sup>, Yongil Kim, Joonsuk Park, and Kyomin Jung.
 
-![Clarification Questions example](image/Figure1.png)
+![Clarification Questions example](image/Figure1_fig.pdf)
 
-* Read the [paper](https://aclanthology.org/2023.findings-emnlp.772/)
+* Read the [paper](https://arxiv.org/abs/2410.20774)
 * Download the dataset: (https://drive.google.com/drive/folders/1bujroxJ02ym8SgEmC10IsVnCc8HAwTLH?usp=sharing) 
 
 ## Content
@@ -20,41 +18,45 @@ by Dongryeol Lee<sup>* </sup>, Segwang Kim<sup> *</sup>, Minwoo Lee, Joonsuk Par
 
 ## Citation
 
-If you find the our task or CAmbigNQ dataset useful, please cite our paper:
+If you find our task or EMBER useful, please cite our paper:
 ```
-@inproceedings{lee2023asking,
-  title={Asking Clarification Questions to Handle Ambiguity in Open-Domain QA},
-  author={Lee, Dongryeol and Kim, Segwang and Lee, Minwoo and Lee, Hwanhee and Park, Joonsuk and Lee, Sang-Woo and Jung, Kyomin},
-  booktitle={Findings of the Association for Computational Linguistics: EMNLP 2023},
-  pages={11526--11544},
+@misc{lee2024llmjudgesrobustexpressionsuncertainty,
+      title={Are LLM-Judges Robust to Expressions of Uncertainty? Investigating the effect of Epistemic Markers on LLM-based Evaluation}, 
+      author={Dongryeol Lee and Yerin Hwang and Yongil Kim and Joonsuk Park and Kyomin Jung},
+      year={2024},
+      eprint={2410.20774},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2410.20774}, 
+}
+```
+
+Please also make sure to credit and cite the creators of EVOUNA and MIXINSTRUCT, the dataset which we built ours off of:
+```
+@article{wang2023evaluating,
+  title={Evaluating open-qa evaluation},
+  author={Wang, Cunxiang and Cheng, Sirui and Guo, Qipeng and Yue, Yuanhao and Ding, Bowen and Xu, Zhikun and Wang, Yidong and Hu, Xiangkun and Zhang, Zheng and Zhang, Yue},
+  journal={Advances in Neural Information Processing Systems},
+  volume={36},
+  pages={77013--77042},
   year={2023}
 }
-```
 
-Please also make sure to credit and cite the creators of AmbigNQ and Natural Questions,
-the dataset which we built ours off of:
-```
-@inproceedings{ min2020ambigqa,
-    title={ {A}mbig{QA}: Answering Ambiguous Open-domain Questions },
-    author={ Min, Sewon and Michael, Julian and Hajishirzi, Hannaneh and Zettlemoyer, Luke },
-    booktitle={ EMNLP },
-    year={2020}
-}
-
-@article{ kwiatkowski2019natural,
-  title={ Natural questions: a benchmark for question answering research},
-  author={ Kwiatkowski, Tom and Palomaki, Jennimaria and Redfield, Olivia and Collins, Michael and Parikh, Ankur and Alberti, Chris and Epstein, Danielle and Polosukhin, Illia and Devlin, Jacob and Lee, Kenton and others },
-  journal={ Transactions of the Association for Computational Linguistics },
-  year={ 2019 }
+@inproceedings{jiang2023llm,
+  title={LLM-Blender: Ensembling Large Language Models with Pairwise Ranking and Generative Fusion},
+  author={Jiang, Dongfu and Ren, Xiang and Lin, Bill Yuchen},
+  booktitle={Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)},
+  pages={14165--14178},
+  year={2023}
 }
 ```
 
 
 ## Dataset Contents
 
-### CambigNQ
+### EMBER
 
-We provide our new dataset CAmbigNQ:
+We provide our new dataset EMBER:
 
 - cq_train.json (23.3M)
 - cq_dev.json (3.8M)
@@ -70,21 +72,6 @@ We provide our new dataset CAmbigNQ:
 - `dqs` (list of strings): Disambiguated questions for a given question, annotated by AmbigNQ.
 - `clarification_answers` (list of lists): Answer set of each corresponding Disambiguated Question. 
 - `clarification_question` (string): Our Clarification Questions which clarify the given ambiguous question.
-
-### Relevant-passages
-
-We release top-100 retrieved passages for a given ambiguous question.
-
-- rel_psg_input_ids_bart_train.pkl (106.8M)
-- rel_psg_input_ids_bart_dev.pkl (13.3M)
-
-Each file contains a list of encoded relevant passages.
-
-### Predicted answer by SPANSEQGEN
-
-We used BART-based model called SPANSEQGEN to predict answers for ambiguous questions.
-
-- pred_MA_prediction.json (10K)
 
 
 ## Create conda environment and install requirements
