@@ -4,7 +4,7 @@ This is the repository documenting the paper
 [Are LLM-Judges Robust to Expressions of Uncertainty? Investigating the effect of Epistemic Markers on LLM-based Evaluation](https://arxiv.org/abs/2410.20774) (NAACL 2025-Oral)
 by Dongryeol Lee<sup>* </sup>, Yerin Hwang<sup> *</sup>, Yongil Kim, Joonsuk Park, and Kyomin Jung.
 
-![Main Figure](image/Figure1_fig.pdf)
+![Main Figure](image/Figure1_fig.png)
 
 * Read the [paper](https://arxiv.org/abs/2410.20774)
 * Download the dataset: (https://huggingface.co/datasets/Dongryeol/EMBER) 
@@ -12,9 +12,9 @@ by Dongryeol Lee<sup>* </sup>, Yerin Hwang<sup> *</sup>, Yongil Kim, Joonsuk Par
 ## Content
 1. [Citation](#citation)
 2. [Dataset Contents](#dataset-contents)
-    * [EMBER_IF format](#ember_if)
-    * [EMBER_QA format](#ember_qa)
-3. [Baseline codes](#baseline-codes)
+    * [EMBER_IF Format](#ember_if)
+    * [EMBER_QA Format](#ember_qa)
+3. [Evaluation Codes](#baseline-codes)
 
 ## Citation
 
@@ -99,7 +99,9 @@ conda create -n ember && conda activate ember
 pip install -r requirements.txt
 ```
 
-### Evaluation
+### Evaluation Codes
+![Main Result IF](image/main_result_if.png)
+![Main Result QA](image/main_result_qa.png)
 
 
 
