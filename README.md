@@ -100,7 +100,19 @@ pip install -r requirements.txt
 ```
 
 ### Evaluation Codes
+Simply change parameters in "run_ifeval.sh" file and run
+```
+bash run_ifeval.sh
+```
+to get the main evaluation result on **Instructions Following** task
 ![Main Result IF](image/main_result_if.png)
+
+Also, simply change parameters in "run_qaeval.sh" file and run
+```
+bash run_qaeval.sh
+```
+to get the main evaluation result on **Question Answering** task
+
 ![Main Result QA](image/main_result_qa.png)
 
 
