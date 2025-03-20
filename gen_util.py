@@ -14,10 +14,6 @@ import random
 from tqdm import tqdm
 
 
-client = OpenAI(
-    api_key=''
-)
-
 def chunks(lst, n):
     for i in range(0, len(lst), n):
         yield lst[i:i+n]
@@ -44,28 +40,6 @@ def gpt4_answer(inputs_with_prompts, engine, max_tokens):
         generations = model.generate(new_input, max_new_tokens=max_tokens, temperature=0, num_return_sequences=1)['responses']
         for generation in generations:
             outputs.append(generation[0])
-    return outputs
-
-def greedy_decoding_instruct(inputs_with_prompts, engine, max_tokens):
-    outputs=[]
-    
-    for chunk_index, new_input in enumerate(tqdm(list(chunks(inputs_with_prompts, 20)))):
-        for _ in range(200):
-            try:
-                with time_limit(40, 'run gpt-3'):
-                    completions=client.completions.create(  
-                        model=engine,
-                        max_tokens=max_tokens,
-                        prompt=new_input,
-                        temperature=0,
-                        n=1,
-                    )
-                    break
-            except:
-                time.sleep(2)
-        for i in range(len(completions.choices)):
-            outputs.append(completions.choices[i].text)
-        print(len(outputs))
     return outputs
 
 def greedy_decoding_llama (pipeline, inputs_with_prompts, max_tokens):
