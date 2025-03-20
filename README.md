@@ -12,9 +12,9 @@ by Dongryeol Lee<sup>* </sup>, Yerin Hwang<sup> *</sup>, Yongil Kim, Joonsuk Par
 ## Content
 1. [Citation](#citation)
 2. [Dataset Contents](#dataset-contents)
-    * [EMBER_IF Format](#ember_if)
-    * [EMBER_QA Format](#ember_qa)
-3. [Evaluation Codes](#baseline-codes)
+    * [EMBER_IF Format](#ember_if-format)
+    * [EMBER_QA Format](#ember_qa-format)
+3. [Evaluation Codes](#evaluation-codes)
 
 ## Citation
 
